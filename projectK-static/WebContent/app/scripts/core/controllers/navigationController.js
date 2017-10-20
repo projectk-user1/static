@@ -15,6 +15,28 @@ angular
 										url : '#/',
 									},
 									{
+										label : 'Client Dashboard',
+										iconClasses : 'ti ti-home',
+										url : '#/clientDashboard',
+									},
+									{
+										label : 'Manage Profile',
+										iconClasses : 'fa fa-users',
+										children : [ {
+											label : 'Create',
+											url : '#/createProfile',
+											iconClasses : 'fa fa-plus-square',
+										}, {
+											label : 'Edit/Modify',
+											url : '#/editProfile',
+											iconClasses : 'fa fa-edit',
+										}, {
+											label : 'Deactivate',
+											url : '#/deleteProfile',
+											iconClasses : 'fa fa-trash-o',
+										}]
+									},
+									{
 										label : 'Search',
 										iconClasses : 'fa fa-search',
 										children : [ {
@@ -61,7 +83,7 @@ angular
 											url : '#/extras-forgotpassword'
 										}, {
 											label : 'Login',
-											url : '#/extras-login'
+											url : '#/login'
 										}, {
 											label : '404 Page',
 											url : '#/extras-404'

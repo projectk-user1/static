@@ -23,20 +23,14 @@ angular
     'theme.demos.error_page',
     'theme.demos.tasks',
     'theme.demos.mail',
+    'theme.demos.search',
+    'theme.demos.login'
   ])
-  .directive('img', ['$timeout', function ($t) {
-      // NOTE: this affects all <img> tags
-      // Remove this directive for production
-    'use strict';
-      return {
-      restrict: 'E',
-      link: function (scope, element) {
-        $t ( function () {
-            var src = element.attr('src') || element.attr('ng-src');
-          if (src.match(/assets\/demo/)) {
-            element.attr('src', 'http://placehold.it/400&text=Placeholder');
-          }
-        }, 10);
-      }
-      };
-  }]);
+  ;
+  /* angular.module('theme.demos').config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+		localStorageServiceProvider.setPrefix('qa-web');
+	}]); 
+
+	angular.module('theme.demos').config(['$httpProvider', function($httpProvider) {
+		$httpProvider.interceptors.push('AuthInterceptor');
+	}]);*/
