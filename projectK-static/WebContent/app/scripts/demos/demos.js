@@ -24,13 +24,14 @@ angular
     'theme.demos.tasks',
     'theme.demos.mail',
     'theme.demos.search',
-    'theme.demos.login'
+    'theme.demos.login',
+    'LocalStorageModule'
   ])
   ;
-  /* angular.module('theme.demos').config(['localStorageServiceProvider', function(localStorageServiceProvider) {
-		localStorageServiceProvider.setPrefix('qa-web');
+  angular.module('theme.demos').config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+		localStorageServiceProvider.setPrefix('projectK');
 	}]); 
 
 	angular.module('theme.demos').config(['$httpProvider', function($httpProvider) {
 		$httpProvider.interceptors.push('AuthInterceptor');
-	}]);*/
+	}]);

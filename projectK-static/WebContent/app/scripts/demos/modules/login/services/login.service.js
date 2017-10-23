@@ -1,8 +1,8 @@
 angular
     .module('theme.demos.login')
     .service('loginService', loginService)
-loginService.$inject = ['$q', '$http', '$location', '$rootScope', '$window'];
-function loginService($q, $http, $location, $rootScope, $window) { // jshint ignore:line
+loginService.$inject = ['$q', '$http', '$location', '$rootScope', '$window', 'localStorageService'];
+function loginService($q, $http, $location, $rootScope, $window, LocalStorage) { // jshint ignore:line
 
     var JWT_TOKEN = "jwtToken";
     var userInfo = {};
@@ -22,11 +22,11 @@ function loginService($q, $http, $location, $rootScope, $window) { // jshint ign
     }
     // Removing Auth Token from Local Storage
     this.logout = function () {
-        // LocalStorage.remove(JWT_TOKEN);
+        LocalStorage.remove(JWT_TOKEN);
     };
 
     // Check if session is authenticated
-    /* this.isAuthed = function () {
+    this.isAuthed = function () {
         var isAuthed = false;
         var token = LocalStorage.get(JWT_TOKEN);
         if (token) {
@@ -40,7 +40,7 @@ function loginService($q, $http, $location, $rootScope, $window) { // jshint ign
         }
 
         return isAuthed;
-    }; */
+    };
 
     var requestPromises = {
         validate: null
@@ -63,13 +63,13 @@ function loginService($q, $http, $location, $rootScope, $window) { // jshint ign
             timeout: requestPromises.validate.promise,
         }).then(function (response) {
             // Saving Token
-            // LocalStorage.add(JWT_TOKEN, response.data.token);
+            LocalStorage.add(JWT_TOKEN, response.data.token);
 
             // Decrypting Token
             userInfo = parseJwt(response.data.token);
 
             // BroadCasting
-            // changeAuthState(userInfo);
+            changeAuthState(userInfo);
             deferred.resolve(response);
         }, function (error) {
             deferred.reject(error);
