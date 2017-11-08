@@ -25,7 +25,8 @@ angular
     'theme.demos.mail',
     'theme.demos.search',
     'theme.demos.login',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'theme.demos.createProfile'
   ])
   ;
   angular.module('theme.demos').config(['localStorageServiceProvider', function(localStorageServiceProvider) {

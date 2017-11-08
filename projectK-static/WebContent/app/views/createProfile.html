@@ -1,42 +1,151 @@
+<div data-ng-controller="createProfileController">
+	<ol class="breadcrumb">
+		<li>
+			<a href="#/">Dashboard</a>
+		</li>
+		<li>Search</li>
+		<li class="active">Create Profile</li>
+	</ol>
 
-<ol class="breadcrumb">
-	<li><a href="#/">Dashboard</a></li>
-	<li>Search</li>
-	<li class="active">Create Profile</li>
-</ol>
-
-<div class="container-fluid">
+	<div class="container-fluid">
 
 
-	<div class="panel panel-default" data-widget='{"draggable": "false"}'>
-		<div class="panel-heading">
-			<h2>Search By ID</h2>
-			<div class="panel-ctrls" data-actions-container=""
-				data-action-collapse='{"target": ".panel-body"}'></div>
-		</div>
-		<div class="panel-body">
-			<form action="" class="form-horizontal row-border">
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Profile Id</label>
-					<div class="col-sm-8">
-						<div class="input-group">
-							<span class="input-group-btn"><button class="btn"
-									type="button">
-									<i class="ti ti-search"></i>
-								</button></span> <input type="text" class="form-control"
-								placeholder="Profile Id">
-						</div>
+		<div class="panel panel-default" data-widget='{"draggable": "false"}'>
+			<div class="panel-body">
+				<div class="tab-content">
+
+
+					<div class="form-group">
+						<label for="firstName" class="control-label">First Name:</label>
+						<input type="text" class="form-control" id="firstName" placeholder="First Name" data-ng-model="firstname">
+					</div>
+					<div class="form-group">
+						<label for="lastName" class="control-label">Last Name:</label>
+						<input type="text" class="form-control" id="lastName" placeholder="Last Name" data-ng-model="lastName">
+					</div>
+					<div class="form-group">
+						<label for="gender" class="control-label">Gender:</label>
+						<input type="text" class="form-control" id="gender" placeholder="First Name" data-ng-model="gender">
+					</div>
+					<!--Email-->
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" placeholder="Email" data-ng-model="email">
+					</div>
+					<!--DOB-->
+					<div class="form-group">
+						<label for="dob">DOB:</label>
+						<input class="form-control" id="dob" placeholder="mm/dd/yyyy" data-ng-model="dob">
+					</div>
+					<!--Height-->
+					<div class="form-group">
+						<label for="dob">Height:</label>
+						<input class="form-control" id="dob" placeholder="Height in Cm" data-ng-model="height">
+					</div>
+					<!--Complexion-->
+					<div class="form-group">
+						<label for="complexion">Complexion:</label>
+						<input class="form-control" id="complexion" placeholder="Complexion" data-ng-model="complexion">
+						<select name="complexion" id="complexion" class="form-control" data-ng-model="complexion" data-ng-options="complexion.fieldValue as complexion.fieldName for complexion in complexionArray">
+						</select>
+					</div>
+
+					<!--Education-->
+					<div class="form-group">
+						<label for="education">Education:</label>
+						<input class="form-control" id="education" placeholder="Education" data-ng-model="educations">
+					</div>
+
+					<!--Occupation-->
+					<div class="form-group">
+						<label for="occupation">Occupation:</label>
+						<select name="occupation" id="occupation" class="form-control" data-ng-model="occupation" data-ng-options="occupation.fieldValue as occupation.fieldName for occupation in occupationArray">
+						</select>
+					</div>
+
+					<!--Caste  -->
+					<div class="form-group">
+						<label for="caste">Caste:</label>
+						<select name="caste" id="caste" class="form-control" data-ng-model="caste" data-ng-options="caste.fieldValue as caste.fieldName for caste in casteArray">
+						</select>
+					</div>
+					<!--Marital Status-->
+					<div class="form-group">
+						<label for="maritalStatus">Marital Status:</label>
+						<select name="maritalStatus" id="maritalStatus" class="form-control" data-ng-model="maritalstatus" data-ng-options="maritalStatus.fieldValue as maritalStatus.fieldName for maritalStatus in maritalStatusArray">
+						</select>
+					</div>
+					<!--Paternal Gotram-->
+					<div class="form-group">
+						<label for="paternalGotram">Paternal Gotram:</label>
+						<select name="paternalGotram" id="paternalGotram" class="form-control" data-ng-model="paternalGotram" data-ng-options="paternalGotram.fieldValue as paternalGotram.fieldName for paternalGotram in gotramArray">
+						</select>
+					</div>
+					<!--Maternal Gotram-->
+					<div class="form-group">
+						<label for="maternalGotram">Maternal Gotram:</label>
+						<select name="maternalGotram" id="maternalGotram" class="form-control" data-ng-model="maternalGotram" data-ng-options="maternalGotram.fieldValue as maternalGotram.fieldName for maternalGotram in gotramArray">
+						</select>
+					</div>
+					<!--Star-->
+					<div class="form-group">
+						<label for="star">Star:</label>
+						<select name="star" id="star" class="form-control" data-ng-model="star" data-ng-options="star.fieldValue as star.fieldName for star in starArray">
+						</select>
+					</div>
+					<!--Rasi-->
+					<div class="form-group">
+						<label for="rasi">Rasi:</label>
+						<select name="rasi" id="rasi" class="form-control" data-ng-model="rasi" data-ng-options="rasi.fieldValue as rasi.fieldName for rasi in rasiArray">
+						</select>
+					</div>
+
+					<!--Abour Self-->
+
+					<div class="form-group">
+						<label for="aboutSelf" class="control-label">About Self:</label>
+						<textarea name="aboutSelf" id="aboutSelf" cols="50" rows="4" class="form-control" data-ng-model="aboutSelf"></textarea>
+					</div>
+
+
+					<!--Salary Component-->
+					<div class="form-group">
+						<label for="salary">Salary:</label>
+						<input class="form-control" id="salary" placeholder="Salary" data-ng-model="salary">
+					</div>
+
+					<!--Mobile-->
+					<div class="form-group">
+						<label for="mobileno">Mobile :</label>
+						<input class="form-control" id="mobileno" placeholder="Mobile" data-ng-model="mobileno">
+					</div>
+
+					<!--Address-->
+					<div class="form-group">
+						<label for="address">Address:</label>
+						<textarea class="form-control" rows="5" id="address" placeholder="Address" data-ng-model="address"></textarea>
+					</div>
+
+					<!--Photo-->
+					<div class="form-group">
+						<label for="photoLink">Photo:</label>
+						<input class="form-control" id="photoLink" placeholder="photoLink" data-ng-model="photoLink">
+					</div>
+
+					<!--Video-->
+					<div class="form-group">
+						<label for="videoLink">Video:</label>
+						<input class="form-control" id="videoLink" placeholder="videoLink" data-ng-model="videoLink">
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
-						<button class="btn-primary btn">Submit</button>
+						<button class="btn-primary btn" data-ng-click="create()">Create</button>
 						<button class="btn-default btn">Cancel</button>
 					</div>
 				</div>
-			</form>
-
+			</div>
 		</div>
+		<!-- container-fluid -->
 	</div>
 </div>
-<!-- container-fluid -->
