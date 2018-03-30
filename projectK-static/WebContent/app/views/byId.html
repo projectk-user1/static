@@ -1,8 +1,6 @@
 <div data-ng-controller="SearchController">
 	<ol class="breadcrumb">
-		<li>
-			<a href="#/">Dashboard</a>
-		</li>
+		<li><a href="#/">Dashboard</a></li>
 		<li>Search</li>
 		<li class="active">By Id</li>
 	</ol>
@@ -13,7 +11,8 @@
 		<div class="panel panel-default" data-widget='{"draggable": "false"}'>
 			<div class="panel-heading">
 				<h2>Search By ID</h2>
-				<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+				<div class="panel-ctrls" data-actions-container=""
+					data-action-collapse='{"target": ".panel-body"}'></div>
 			</div>
 			<div class="panel-body">
 
@@ -25,30 +24,109 @@
 								<button class="btn" type="button">
 									<i class="ti ti-search"></i>
 								</button>
-							</span>
-							<input type="text" data-ng-model="searchId" class="form-control" placeholder="Profile Id">
+							</span> <input type="text" data-ng-model="searchId" class="form-control"
+								placeholder="Profile Id">
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="panel-footer">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<button class="btn-primary btn" data-ng-click="submit()">Submit</button>
 						<button class="btn-default btn">Cancel</button>
 					</div>
 				</div>
-
-
 			</div>
+
 		</div>
-		<div class="panel panel-default" data-widget='{"draggable": "false"}'>
-			<div class="panel-heading">
-				<h2>Results</h2>
-				<div class="panel-ctrls" data-actions-container="" data-action-collapse='{"target": ".panel-body"}'></div>
+	</div>
+	<div class="panel panel-default" data-widget='{"draggable": "false"}'
+		data-ng-show="loadingProfile">
+
+		<div class="panel-body">
+
+			<div class="about-area">
+				<h4>Personal Information</h4>
+				<div class="table-responsive">
+					<table class="table about-table">
+						<tbody>
+							<tr>
+								<th>Full Name</th>
+								<td>{{profile.firstname}} - {{profile.lastName}}</td>
+							</tr>
+							<tr>
+								<th>DOB:</th>
+								<td>{{profile.dob}}</td>
+								<th>Height:</th>
+								<td>{{profile.height}}</td>
+							</tr>
+							<tr>
+								<th>Gender</th>
+								<td>{{profile.gender}}</td>
+								<th>Complexion:</th>
+								<td>{{profile.complexion}}</td>
+							</tr>
+							<tr>
+								<th>Email</th>
+								<td>{{profile.email}}</td>
+							</tr>
+
+							<tr>
+								<th>Education:</th>
+								<td>{{profile.educations}}</td>
+								<th>Occupation:</th>
+								<td>{{profile.occupation}}</td>
+							</tr>
+							<tr>
+								<th>Caste:</th>
+								<td>{{profile.caste}}</td>
+								<th>Marital Status:</th>
+								<td>{{profile.maritalstatus}}</td>
+							</tr>
+							<tr>
+								<th>Paternal Gotram:</th>
+								<td>{{profile.paternalGotram}}</td>
+								<th>Maternal Gotram:</th>
+								<td>{{profile.maternalGotram}}</td>
+							</tr>
+
+							<tr>
+								<th>Star:</th>
+								<td>{{profile.star}}</td>
+								<th>Rasi:</th>
+								<td>{{profile.rasi}}</td>
+							</tr>
+							<tr>
+								<th>About Self:</th>
+								<td>{{profile.aboutSelf}}</td>
+								<th>Salary:</th>
+								<td>{{profile.salary}}</td>
+							</tr>
+							<tr>
+								<th>Mobile:</th>
+								<td>{{profile.mobileno}}</td>
+								<th>Address:</th>
+								<td>{{profile.address}}</td>
+							</tr>
+							<tr>
+								<th>Photo:</th>
+								<td>{{profile.photoLink}}</td>
+								<th>Video:</th>
+								<td>{{profile.videoLink}}</td>
+							</tr>
+
+
+
+
+
+
+						</tbody>
+					</table>
+				</div>
 			</div>
-			<div class="panel-body">
 
-
-				<div class="row">
+			<!-- <div class="row">
 					<div class="col-md-6">
 						<div class="panel panel-default" data-widget='{"draggable": "false"}'>
 							<div class="panel-heading">
@@ -89,11 +167,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 
-			</div>
 		</div>
 	</div>
+</div>
 </div>
 <!-- container-fluid -->

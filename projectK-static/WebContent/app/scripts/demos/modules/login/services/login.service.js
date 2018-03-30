@@ -63,10 +63,10 @@ function loginService($q, $http, $location, $rootScope, $window, LocalStorage) {
             timeout: requestPromises.validate.promise,
         }).then(function (response) {
             // Saving Token
-            LocalStorage.add(JWT_TOKEN, response.data.token);
+            LocalStorage.add(JWT_TOKEN, response.data.data);
 
             // Decrypting Token
-            userInfo = parseJwt(response.data.token);
+            userInfo = parseJwt(response.data.data);
 
             // BroadCasting
             changeAuthState(userInfo);
